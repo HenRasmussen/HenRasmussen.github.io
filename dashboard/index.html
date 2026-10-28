@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Samlet status for syv projekter baseret på GitHub Projects.">
+  <meta name="theme-color" content="#07090c">
+  <title>Portfolio Dashboard — HenRasmussen</title>
+  <link rel="stylesheet" href="https://henrasmussen.github.io/assets/styles.css">
+  <link rel="stylesheet" href="dashboard.css">
+  <script src="https://henrasmussen.github.io/assets/site.js" defer></script>
+  <script src="dashboard.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#dashboard">Gå til dashboard</a>
+  <header class="site-header">
+    <nav class="nav shell" aria-label="Primær navigation">
+      <a class="brand" href="../" aria-label="Tilbage til portfolio">
+        <span class="brand-mark" aria-hidden="true">HR</span>
+        <span>HenRasmussen</span>
+      </a>
+      <div class="nav-links">
+        <a href="#projects">Projekter</a>
+        <a href="#method">Datagrundlag</a>
+        <span class="availability">GitHub Projects</span>
+      </div>
+    </nav>
+  </header>
+
+  <main id="dashboard" class="dashboard shell">
+    <section class="dashboard-hero" data-reveal>
+      <p class="eyebrow">Portfolio dashboard</p>
+      <div class="dashboard-title">
+        <div>
+          <h1>Syv projekter.<br><span>Én samlet status.</span></h1>
+          <p>Et read-only overblik. GitHub Projects er fortsat den eneste autoritative backlog.</p>
+        </div>
+        <p class="freshness">Kontrolleret <time id="generated-at">—</time></p>
+      </div>
+    </section>
+
+    <section class="summary-grid" aria-label="Porteføljen i tal" data-reveal>
+      <article><span>Projekter</span><strong id="total-projects">—</strong></article>
+      <article><span>Åbne elementer</span><strong id="total-open">—</strong></article>
+      <article><span>Alle elementer</span><strong id="total-items">—</strong></article>
+      <article><span>Blockers</span><strong id="total-blockers">—</strong></article>
+    </section>
+
+    <section class="distribution" aria-labelledby="distribution-title" data-reveal>
+      <div>
+        <p class="eyebrow">Statusfordeling</p>
+        <h2 id="distribution-title">Aktuel fordeling på tværs</h2>
+      </div>
+      <div class="distribution-chart" id="distribution-chart"></div>
+    </section>
+
+    <section id="projects" class="portfolio-section" aria-labelledby="projects-title">
+      <div class="section-heading compact" data-reveal>
+        <div>
+          <p class="eyebrow">Projektstatus</p>
+          <h2 id="projects-title">Direkte fra de syv boards</h2>
+        </div>
+        <p>Åben betyder, at boardets Status ikke er Done. Lukkede issues tælles derfor ikke automatisk som færdige.</p>
+      </div>
+      <div class="dashboard-grid" id="project-grid" aria-live="polite"></div>
+      <p class="load-error" id="load-error" hidden>Dashboarddata kunne ikke indlæses. Åbn GitHub Projects via links i dokumentationen.</p>
+    </section>
+
+    <section id="method" class="method" data-reveal>
+      <div>
+        <p class="eyebrow">Datagrundlag</p>
+        <h2>Afledt visning — ikke en ny backlog</h2>
+      </div>
+      <div>
+        <p>Dashboardet viser kun aggregerede tal og links. Det opretter eller ændrer ikke issues, kort, statusser, labels eller felter.</p>
+        <p>Blockers er elementer med Status <strong>Blocked</strong> eller label <strong>blocked/blocker</strong>. “Kræver opmærksomhed” markerer datakonsistens, men tælles ikke som blocker.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner shell">
+      <div>
+        <p class="eyebrow">HenRasmussen</p>
+        <p>Portfolio Dashboard · <span data-year></span></p>
+      </div>
+      <p class="footer-meta">Read-only snapshot<br>Source: GitHub Projects</p>
+    </div>
+  </footer>
+</body>
+</html>
